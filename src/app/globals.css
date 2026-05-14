@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --imn-red: #E42527;
+    --imn-dark: #0F0F0F;
+    --background: #ffffff;
+    --foreground: #0F0F0F;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-imn-dark font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans font-bold;
+  }
+
+  ::selection {
+    background-color: rgba(228, 37, 39, 0.3);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-wide {
+    @apply mx-auto max-w-8xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-4xl px-4 sm:px-6;
+  }
+
+  /* Button Styles — NowThis bold */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-imn-red text-white font-sans font-bold text-sm uppercase tracking-wider
+           rounded-sm transition-all duration-200
+           hover:bg-imn-red-dark hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-imn-red focus:ring-offset-2
+           active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-white text-imn-dark font-sans font-bold text-sm uppercase tracking-wider
+           rounded-sm border-2 border-imn-gray-200
+           transition-all duration-200
+           hover:border-imn-dark hover:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-imn-dark focus:ring-offset-2
+           active:scale-[0.98];
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-transparent text-white font-sans font-bold text-sm uppercase tracking-wider
+           rounded-sm border-2 border-white/80
+           transition-all duration-200
+           hover:bg-white hover:text-imn-dark
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
+           active:scale-[0.98];
+  }
+
+  /* Section variants */
+  .section-red {
+    @apply bg-imn-red text-white;
+  }
+
+  .section-dark {
+    @apply bg-imn-dark text-white;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+
+  /* Category Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1
+           text-xs font-bold font-sans
+           uppercase tracking-wider;
+  }
+
+  .badge-red {
+    @apply badge bg-imn-red text-white;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  /* Prose/Article styling */
+  .article-content {
+    @apply prose prose-lg max-w-none
+           prose-headings:font-sans prose-headings:font-bold prose-headings:text-imn-dark prose-headings:uppercase
+           prose-a:text-imn-red prose-a:no-underline hover:prose-a:underline
+           prose-blockquote:border-l-imn-red prose-blockquote:not-italic prose-blockquote:font-semibold
+           prose-img:rounded-lg;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-imn-red to-imn-red-light;
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    @apply animate-pulse bg-imn-gray-200 rounded;
+  }
+}
+
+@layer utilities {
+  /* Rough underline — NowThis-style keyword emphasis */
+  .underline-rough {
+    text-decoration: underline;
+    text-decoration-color: #E42527;
+    text-decoration-thickness: 3px;
+    text-decoration-style: wavy;
+    text-underline-offset: 4px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aspect ratio utilities */
+  .aspect-video-custom {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Line clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
