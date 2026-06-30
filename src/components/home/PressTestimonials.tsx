@@ -12,9 +12,9 @@ interface PressTestimonialsProps {
 const defaultTestimonials: Testimonial[] = [
   {
     _id: "1",
-    quote: "A bold new voice in Pakistani digital journalism that refuses to look away.",
-    source: "The Guardian",
-    organization: "The Guardian",
+    quote: "IMN has been a reliable partner.",
+    source: "WWF Pakistan",
+    organization: "WWF",
   },
   {
     _id: "2",
